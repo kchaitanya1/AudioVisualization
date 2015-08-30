@@ -1,26 +1,34 @@
 <!doctype html>
 <html lang="en">
 <head>
+<link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
 	<meta charset="utf-8" />
-	<title>Audio Visualization</title>
+	<title>Stella del Mattino - Ludovico Einaudi</title>
 	<style>
+		body {
+			font-family: 'Special Elite';
+		}
 		.area { position:relative;
 			background:white;
 			width:1280px; height:720px;
 			margin-left: auto;
 			margin-right: auto;
 		}
-		.bar { position:absolute; bottom:0; box-shadow:0px -2px 0 rgb(0,175,0); background:black; -webkit-transition:0.1s ease all;}
 		.dot { position:absolute; bottom:0; background:#808080; height:5px; }
+		.copyrightText { color: #808080; text-align: center; }
 	</style>
 </head>
 <body>
+	<h1>Stella del Mattino</h1>
+	<h2>Ludovico Einaudi</h2>
 	<div class="experiment" id="r1">
 		<div id="dots" class="area"></div>
 		</div>
-		<audio id="r0audio" src="stl_fnl3_cut.mp3"></audio>
+		<audio id="audioSrc" src="stl_fnl3_cut.mp3"></audio>
 	
 	</div>
+	<br/>
+	<div class="copyrightText">&copy; Krishna Acondy</div>
 	<script>
 		window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
 
@@ -89,7 +97,7 @@
 					height = config.height || 720;
 
 				var init = function() {
-					audio = document.getElementById('r0audio');
+					audio = document.getElementById('audioSrc');
 					audioCtx = new AudioContext();
 					analyser = audioCtx.createAnalyser();
 					source =  audioCtx.createMediaElementSource(audio);
