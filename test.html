@@ -13,6 +13,8 @@
 			width:1280px; height:720px;
 			margin-left: auto;
 			margin-right: auto;
+			margin-bottom: 2%;
+			margin-top: -20%;
 		}
 		.dot { position:absolute; bottom:0; background:#808080; height:5px; }
 		.copyrightText { color: #808080; text-align: center; }
@@ -64,7 +66,7 @@
 				var renderFrame = function(frequencyData) {
 					for(var i = 0; i < barsArr.length; i++) {
 						var bar = barsArr[i];
-						bar.style.bottom = (0.25*(frequencyData[i]/max)*height + 'px');
+						bar.style.bottom = (0.33*(frequencyData[i]/max)*height + 'px');
 						bar.style.left+= ((0.25*(frequencyData[i]/max)*height) + 'px');
 					}
 				};
